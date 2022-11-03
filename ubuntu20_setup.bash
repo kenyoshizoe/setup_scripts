@@ -32,20 +32,6 @@ else
     ssh-keygen -t rsa
 fi
 
-echo "--- install nvidia driver ---"
-nvidia-smi &> /dev/null
-if [ $? -ne 0 ] ; then
-    sudo ubuntu-drivers install
-    sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
-    echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /" | sudo tee /etc/apt/sources.list.d/cuda.list
-    sudo apt update
-    sudo apt install -y "linux-headers-$(uname -r)" build-essential
-    sudo apt install -y cuda-drivers
-    echo "[notice] you need reboot. to apply nvidia driver."
-else
-    echo "skip."
-fi
-
 echo "--- install terminator ---"
 terminator -v &> /dev/null
 if [ $? -ne 0 ] ; then
