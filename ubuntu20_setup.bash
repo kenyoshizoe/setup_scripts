@@ -73,7 +73,7 @@ if [ $? -ne 0 ] ; then
     sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     sudo apt update
     sudo apt-get install google-chrome-stable
-    rm /etc/apt/sources.list.d/google.list
+    sudo rm /etc/apt/sources.list.d/google.list
 else
     echo "skip."
 fi
