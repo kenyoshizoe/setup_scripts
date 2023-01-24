@@ -93,3 +93,6 @@ git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 mkdir -p ~/.local/share/themes && cp -r gruvbox-material-gtk/themes/* ~/.local/share/themes
 mkdir -p ~/.local/share/icons && cp -r gruvbox-material-gtk/icons/* ~/.local/share/icons
 rm -rf gruvbox-material-gtk
+
+echo "--- install system-monitor-applet ---"
+sudo apt install gnome-shell-extension-system-monitor
