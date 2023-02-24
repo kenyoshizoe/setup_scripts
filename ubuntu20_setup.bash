@@ -10,6 +10,10 @@ else
     echo "skip."
 fi
 
+echo "--- change background ---"
+gsettings set org.gnome.desktop.background picture-uri 'none'
+gsettings set org.gnome.desktop.background primary-color '#282828'
+
 echo "--- install fundamental packages ---"
 sudo apt install git ca-certificates curl gnupg lsb-release apt-transport-https gdebi -y
 
@@ -93,3 +97,8 @@ git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 mkdir -p ~/.local/share/themes && cp -r gruvbox-material-gtk/themes/* ~/.local/share/themes
 mkdir -p ~/.local/share/icons && cp -r gruvbox-material-gtk/icons/* ~/.local/share/icons
 rm -rf gruvbox-material-gtk
+
+echo "--- install system monitor applet ---"
+sudo apt install gnome-shell-extension-system-monitor
+sudo apt install gnome-shell-extension-prefs
+
