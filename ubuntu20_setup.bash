@@ -20,11 +20,8 @@ echo "--- change background ---"
 gsettings set org.gnome.desktop.background picture-uri 'none'
 gsettings set org.gnome.desktop.background primary-color '#282828'
 
-echo "--- install fundamental packages ---"
-sudo apt install git ca-certificates curl gnupg lsb-release apt-transport-https gdebi -y
-
-docker --version &> /dev/null
 echo "--- install docker ---"
+docker --version &> /dev/null
 if [ $? -ne 0 ] ; then
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | \
