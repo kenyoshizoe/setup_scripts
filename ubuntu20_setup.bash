@@ -104,3 +104,4 @@ rm -rf gruvbox-material-gtk
 echo "--- install system monitor applet ---"
 # sudo apt install gnome-shell-extension-system-monitor
 sudo apt install gnome-shell-extension-prefs
+sudi apt install gnome-tweaks
