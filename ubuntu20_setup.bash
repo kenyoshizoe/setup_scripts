@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 
-#sudo apt update -y
-#sudo apt upgrade -y
+echo "--- install fundamental packages ---"
+sudo apt install git ca-certificates curl gnupg lsb-release apt-transport-https gdebi -y
+
+echo "--- change apt source ---"
+sudo sed -i.bak -r 's@http://(jp\.)?archive\.ubuntu\.com/ubuntu/?@https://ftp.udx.icscoe.jp/Linux/ubuntu/@g' /etc/apt/sources.list
+
+sudo apt update -y
+sudo apt upgrade -y
 
 echo "--- change home directory name ---"
 if [ -d ~/デスクトップ ] ; then
